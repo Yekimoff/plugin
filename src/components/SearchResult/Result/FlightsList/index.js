@@ -45,7 +45,7 @@ export default function (props) {
     }
   }, [newHandle, url]);
 
-
+console.log(props);
 
   return (
     <div className="fs-search-flight-list">
@@ -86,9 +86,9 @@ export default function (props) {
                     >
                       <img src={planeSrc} />
                       <span>
-                        {x.flight_Type === "Regular"
-                          ? " Регулярный"
-                          : "Чартерный"}
+                        {x.flight_Type === "Charter"
+                          ? "Чартерный"
+                          : "Регулярный"}
                       </span>
                     </div>
                   )}

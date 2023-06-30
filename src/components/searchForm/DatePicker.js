@@ -17,7 +17,7 @@ const Container = styled.div`
     display: flex;
     margin-bottom: 10px;
   }
-`;
+`; 
 
 const CalendarIcon = styled(Icon)`
   width: 15px;

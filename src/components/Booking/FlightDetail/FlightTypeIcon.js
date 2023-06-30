@@ -9,7 +9,7 @@ export default function FlightTypeIcon(props) {
       style={{background: props.flightType === 'Regular' ? '#E3EAFF' : '#FFF3CD'}}
     >
       <img src={planeSrc} />
-      <span>{props.flightType  === 'Regular' ? ' Регулярный' : 'Чартерный'}</span>
+      <span>{props.flightType  === 'Charter' ? 'Чартерный' : 'Регулярный'}</span>
     </div>
   );
 }
