@@ -1,15 +1,41 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Simple Embeddable React Widget</title>
+    <title>White label плагин</title>
 </head>
 
 <body>
-    <h1>Simple Embeddable React Widget</h1>
-    <p>Demo #1: <a href="demo_sync.html">synchronous loading</a></p>
-    <p>Demo #2: <a href="demo_async.html">asynchronous loading</a></p>
+    
+    <h1>White label плагин</h1>
+    <p><a href="demo_sync.html">Синхронная загрузка</a></p>
+    <p>Пример:     
+    <pre style="background: rgba(128, 128, 128, 0.32);">
+    <code style="max-width: 500px;">
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+    &lt;script 
+        src="http://whitelabelplugin.tte.stage.tui.local/widget.js"  
+        id="fs-flight-search-widget-Script" 
+        data-config="{'name': 'w1', 'config': {'targetElementId': 'root','account': '80094cee-5a30-40a5-9242-228904338a69','modules' : ['search']}}" 
+    &gt;&lt;/script&gt; 
+    </code>
+    </pre>
+    </p>
+    <p><a href="demo_async.html">Асинхронная загрузка</a></p>
+    <p>Пример:
+    <pre style="background: rgba(128, 128, 128, 0.32);">
+    <code style="max-width: 500px;">
+    &lt;script&gt; 
+        (function (w, d, s, o, f, js, fjs) {
+            w['fs-flight-search-widget'] = o; w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'w1', 'http://whitelabelplugin.tte.stage.tui.local/widget.js'));
+        w1('init', {'targetElementId': 'root','account': '80094cee-5a30-40a5-9242-228904338a69','modules' : ['search']});
+    &lt;/script&gt;
+    </code>
+    </pre>    
+    </p>
 </body>
 
 </html>
