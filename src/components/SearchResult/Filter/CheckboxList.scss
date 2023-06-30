@@ -1,0 +1,10 @@
+.fs-filter-checkbox-list {
+  & > label {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,61 @@
+.fs-ui-loader {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: 1000;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: white;
+    transition: opacity 200ms;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+
+    &__company {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.fs-ui-loader-circle {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  position: relative;
+  animation: spin 1s ease-in-out infinite;
+
+  &__curve {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+
+}
+

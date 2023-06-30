@@ -1,0 +1,29 @@
+.fs-search-filter-range-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.fs-search-filter-range {
+  & .rc-slider-handle {
+    border: 1px solid var(--primary-gray);
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    opacity: 1;
+  }
+  & .rc-slider-handle-dragging {
+    border-color: var(--primary-blue) !important;
+    box-shadow: none !important;
+  }
+  & .rc-slider-track {
+    background-color: var(--primary-blue);
+    height: 1px;
+  }
+  & .rc-slider-rail {
+    height: 1px;
+  }
+
+  &.rc-slider {
+    width: 93%;
+  }
+}

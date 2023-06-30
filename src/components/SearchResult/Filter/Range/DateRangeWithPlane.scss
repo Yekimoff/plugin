@@ -1,0 +1,45 @@
+.fs-search-filter-date-range {
+    margin-bottom: 12px;
+}
+
+.fs-search-filter-date-range__head {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+
+    &__text {
+        font-family: var(--font-stack);
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--primary-black);
+    }
+
+    &__icon {
+        margin: 0 8px;
+        width: 24px;
+        height: 24px;
+    }
+}
+.fs-search-filter-date-range--small-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    font-family: var(--font-stack);
+    color: var(--primary-black);
+}
+
+.fs-search-filter-date-range__city {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fs-search-filter-date-range__values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+

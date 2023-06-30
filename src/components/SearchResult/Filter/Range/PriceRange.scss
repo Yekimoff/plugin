@@ -1,0 +1,16 @@
+.fs-search-filter__price-range {
+  &__desc {
+    font-family: var(--font-stack);
+    color: var(--primary-black);
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    &__text {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
+}

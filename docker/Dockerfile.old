@@ -1,0 +1,49 @@
+FROM ubuntu:20.04
+#FROM node:lts-alpine
+# FROM hoosin/alpine-nginx-nodejs:latest
+ARG where
+
+RUN apt-get update \
+&& apt-get install -y xz-utils \
+&& apt-get install -y nginx \
+&& apt-get install -y nodejs \
+&& apt-get install -y curl \
+&& apt-get install -y npm \
+&& npm update npm -g \
+&& npm install -g n \
+&& n v16.18.0 \
+&& rm /etc/nginx/sites-enabled/default \
+#RUN mkdir -p /etc/nginx/sites-enabled \
+&& mkdir -p /app/app \
+&& mkdir -p /app/config \
+&& mkdir -p /app/logs \
+&& mkdir -p /var/www/html
+
+ADD . /app
+EXPOSE 80
+
+ENV ENV1=ENV1 \
+    ENV2=ENV2 \
+    TZ=Europe/Moscow
+ADD nginx.conf /etc/nginx/sites-enabled/
+
+
+
+WORKDIR /app
+
+RUN npm install
+
+# RUN if [ "$where" = "prod" ]; then yarn build:prod ; fi
+# RUN if [ "$where" = "development" ]; then yarn build:test ; fi
+
+RUN npm run build
+
+RUN ls -lah /app/dist/
+
+RUN ls -la && pwd
+RUN chmod +x /app/run.sh
+RUN ls /app/ && cp -r /app/dist/* /var/www/html/
+
+ENTRYPOINT ["/app/run.sh"] 
+
+

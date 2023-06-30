@@ -1,0 +1,15 @@
+.fs-widget__search {
+  display: flex;
+  justify-content: center;
+  
+  &__result {
+      width: 858px;
+  }
+
+  &__filter {
+      width: 286px;
+      @media screen and (max-width:768px) {
+      width:0;
+      }
+  }
+}

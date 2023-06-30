@@ -1,0 +1,41 @@
+.fs-booking-time-limit {
+  padding: 14px 24px;
+  background: #fff3cd;
+  border: 1px solid #ffb800;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin-right: 12.5px;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+  }
+
+  &__text {
+    font-family: var(--font-stack);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--primary-black);
+
+    & > strong {
+      font-weight: 600;
+    }
+  }
+
+  @media (max-width: 767px) {
+    align-items: flex-start;
+    padding: 14px;
+
+    &__icon {
+      width: 25px;
+      height: 25px;
+      margin-right: 8px;
+    }
+  }
+}

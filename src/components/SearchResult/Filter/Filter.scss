@@ -1,0 +1,8 @@
+.fs-filter {
+  @media screen and (max-width:768px) {
+    display:none;
+  }
+  & > div {
+    border-bottom: 1px solid rgb(242, 242, 242);
+  }
+}

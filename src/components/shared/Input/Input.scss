@@ -1,0 +1,56 @@
+// @import '../../../assets/styles/constants.scss';
+
+.fs-ui-input__container {
+  font-family: $font-stack;
+  font-style: normal;
+  font-weight: normal;
+  color: $primary-black;
+  height: 60px;
+  box-sizing: border-box;
+  width: 256px;
+  position: relative;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.fs-ui-input__label {
+  position: absolute;
+  transform: translate(12px, 20px) scale(1);
+  transform-origin: top left;
+  transition: all 0.2s ease-in-out;
+  pointer-events: none;
+  color: #b9b9b9;
+
+  &--active {
+    transform: translate(12px, 9px) scale(.75);
+  }
+}
+
+.fs-ui-input__code {
+  color: #b9b9b9;
+  text-transform: uppercase;
+  position: absolute;
+  top: 31px;
+  right: 12px;
+  pointer-events: none;
+}
+
+.fs-ui-input__input {
+  font-size: 16px;
+  line-height: 20px;
+  color: #3c3c3c;
+  border: none;
+  outline: 0;
+  padding: 31px 15px 9px 12px;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  outline: none;
+  width: 100%;
+  box-shadow: 0 0 0 2px #4872f2;
+  transition: 0.2s;
+
+  /* &:focus {
+    box-shadow: 0 0 0 2px #ff6d00;
+    z-index: 2;
+  } */
+}

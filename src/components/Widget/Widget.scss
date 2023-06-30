@@ -1,0 +1,22 @@
+.fs-widget {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 550px;
+    overflow: hidden;
+    padding: 20px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    position: relative;
+
+    &__search {
+        display: flex;
+        justify-content: space-between;
+        &__result {
+            width: 858px;
+        }
+
+        &__filter {
+            width: 286px;
+        }
+    }
+}

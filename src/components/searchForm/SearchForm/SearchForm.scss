@@ -1,0 +1,41 @@
+.fs-search-form {
+  display: block;
+  margin: 0 auto 20px auto;
+  max-width: 1150px;
+}
+
+.fs-search-form__inputs {
+  display: flex;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.fs-search-form__button {
+  background-color: var(--primary-blue);
+  font-family: var(--font-stack);
+  color: white;
+  border: none;
+  outline: none;
+  font-style: normal;
+  cursor: pointer;
+  position: relative;
+  width: 146px;
+  height: 64px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 18px 30.5px;
+  white-space: nowrap;
+  box-sizing: border-box;
+  margin-left: 12px;
+  @media screen and (max-width: 768px) {
+    width:100%;
+    margin-top:10px;
+    padding: 13px 15px;
+    margin-left:0;
+  }
+}

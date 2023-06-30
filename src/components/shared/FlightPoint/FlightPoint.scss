@@ -1,0 +1,46 @@
+.fs-ui-flight-point {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e3eaff;
+
+  @media (max-width: 767px) {
+    width: 12px;
+    height: 12px;
+    border: 3px solid #4872f2;
+    border-radius: 50%;
+    background: #edf1fe;
+    z-index: 2;
+    position: relative;
+    box-sizing: border-box;
+  }
+}
+
+.fs-ui-flight-point__inner-round {
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background: #4872f2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.fs-ui-flight-point__upper-text {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  font-family: var(--font-stack);
+  line-height: 16px;
+  color: #4872f2;
+  position: absolute;
+  top: -19px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}

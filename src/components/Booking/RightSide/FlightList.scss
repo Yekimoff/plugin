@@ -1,0 +1,62 @@
+.fs-booking-right-side-flight-list {
+  & > div {
+    margin-bottom: 30px;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+
+  &__item {
+    
+    .item-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__text {
+        font-family: var(--font-stack);
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        color: var(--primary-black);
+      }
+
+      &__text--blue {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        color: var(--primary-blue);
+      }
+
+      &__line {
+        flex-grow: 0.8;
+        background-color: var(--primary-gray);
+        height: 2px;
+        position: relative;
+
+        &__text {
+          font-family: var(--font-stack);
+          font-style: normal;
+          font-weight: normal;
+          font-size: 10px;
+          line-height: 14px;
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: -17px;
+          white-space: nowrap;
+          color: var(--dark-gray);
+        }
+      }
+    }
+
+    .item-row--first {
+      margin-bottom: 7px;
+    }
+    .item-row--second {
+      margin-bottom: 4px;
+    }
+  }
+}

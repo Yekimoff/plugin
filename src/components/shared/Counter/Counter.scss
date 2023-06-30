@@ -1,0 +1,65 @@
+.fs-ui-counter {
+  display: inline-flex;
+  align-items: center;
+}
+
+.fs-ui-counter__button-base {
+  background: var(--primary-blue);
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  &:disabled {
+    background: var(--primary-gray);
+  }
+}
+
+.fs-ui-counter__plus {
+  &:before, &:after {
+    position: absolute;
+    content: ' ';
+    height: 14px;
+    width: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 1px;
+  }
+  &:after {
+    transform: translate(-50%, -50%) rotate(-90deg);
+  }
+}
+
+.fs-ui-counter__minus {
+  &:before {
+    position: absolute;
+    content: ' ';
+    width: 14px;
+    height: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 1px;
+  }
+}
+
+
+.fs-ui-counter__input {
+  outline: none;
+  border: none;
+  padding: none;
+  text-align: center;
+  width: 30px;
+  margin: 0 1px;
+  font-family: var(--font-stack);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--primary-black);
+}

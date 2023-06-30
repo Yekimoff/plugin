@@ -1,0 +1,43 @@
+.fs-filter-category {
+  padding: 24px 0px;
+}
+
+.fs-filter-category--active {
+  .fs-filter-category__head {
+    &__icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  .fs-filter-category__content {
+    display: block;
+  }
+}
+
+.fs-filter-category__head {
+  display: flex;
+  align-items: center;
+
+  &__title {
+    font-family: var(--font-stack);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(60, 60, 60);
+    margin-right: 9px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    width: 8.7px;
+    height: 5.61px;
+  }
+}
+
+.fs-filter-category__content {
+  display: none;
+  margin-top: 24px;
+}

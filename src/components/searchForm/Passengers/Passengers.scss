@@ -1,0 +1,123 @@
+.fs-passengers__wrapper {
+  position: relative;
+
+  @media screen and (max-width: 768px) {
+    width:100%;
+  }
+}
+
+.fs-passengers__button {
+  font-family: var(--font-stack);
+  color: #3c3c3c;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  overflow: hidden;
+  height: 60px;
+  width: 163px;
+  outline: none;
+  padding: 31px 12px 9px 12px;
+  background: #fff;
+  border: none;
+  display: block;
+  border-radius: 0 4px 4px 0;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  position: relative;
+  margin: 0px;
+  transition: 0.2s;
+  box-shadow: 0 0 0 2px #4872f2;
+  border-left: 1px solid #dcdcdc;
+
+  &:focus {
+    box-shadow: 0 0 0 2px #ff6d00;
+    z-index: 2;
+  }
+
+  &__label {
+    position: absolute;
+    left: 0;
+    top: 9px;
+    transform: scale(0.75);
+    color: #b9b9b9;
+    pointer-events: none;
+  }
+
+
+  &__icon {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    transition: transform 0.2s ease-in-out;
+    pointer-events: none;
+  }
+  @media screen and (max-width: 768px) {
+    width:100%;
+  }
+}
+
+.fs-passengers__modal {
+  position: absolute;
+  background-color: white;
+  z-index: 100;
+  width: 300px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05), 0px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 5px 5px;
+  padding: 0 16px 24px 12px;
+  right: 0;
+  box-sizing: border-box;
+
+  @media (max-width: 767px) {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  &__flight-class {
+    padding-top: 16px;
+    & > label {
+      margin-bottom: 16px;
+    }
+    & > :last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__ppls-selector {
+    border-bottom: 1px solid #f2f2f2;
+    font-family: var(--font-stack);
+
+    &__category {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 56px;
+
+      &__desc {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+          display: inline-block;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 20px;
+          color: var(--primary-black);
+        }
+
+        &__desc {
+          display: inline-block;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          color: var(--primary-gray);
+        }
+      }
+    }
+  }
+}
