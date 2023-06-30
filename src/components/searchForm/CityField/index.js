@@ -10,11 +10,18 @@ const getCityListByStr = async (
   str,
   abortController,
 ) => {
+  const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+  let headers = {};
+  if (account) {
+    headers = {'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID')}
+  }
+  console.log(account);
   if (dataCollection[str]) return dataCollection[str];
   const response = await fetch(
     `https://avia-new.fstravel.com/api/wl-plugin/external/cities/search?value=${str}`,
     {
       signal: abortController ? abortController.signal : undefined,
+      headers: headers,
     }
   );
   if (!response.ok) {

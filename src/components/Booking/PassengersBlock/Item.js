@@ -29,8 +29,15 @@ import moment from 'moment';
 
 export async function getCityList(str) {
   try {
+    const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+    let headers = {};
+    if (account) {
+      headers = {'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID')}
+    }
     const response = await fetch(
-      `https://avia-new.fstravel.com/api/wl-plugin/external/references/countries/search?value=${str}`
+      `https://avia-new.fstravel.com/api/wl-plugin/external/references/countries/search?value=${str}`, {
+        headers: headers
+        }
     );
     const data = await response.json();
     return data;

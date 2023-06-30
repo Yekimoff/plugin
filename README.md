@@ -6,12 +6,12 @@ Both synchronous and asynchronous loading is supported.
 # Overview
 1. The widget is instantiated when the .js package is loaded
 2. The host page supplies a **name** and a **targetElementId**
-3. The widget registers a global object with the name supplied by the host page 
+3. The widget registers a global object with the name supplied by the host page
 4. The widget renders the React component at the element specified by the host page
 5. The host page can communicate with the widget via the global object
 
 ## Demo
-You can view a live demo of both synchronous and asynchronous loading here: 
+You can view a live demo of both synchronous and asynchronous loading here:
 
 https://bjgrosse.github.io/simple-embeddable-react-widget/dist/
 
@@ -53,7 +53,7 @@ We can load the widget asynchronously. Using this method we create a *temporary*
 
 This code follows the pattern used by Google Analytics. The function is called with the desired name of the global object (**w1**) and the url to the script. The function then records the desired name and, using that name, creates a placeholder global object that receives and queues any calls made to the widget before the asynchronous loading finishes.
 
-Then it creates a script tag and injects it into the DOM. 
+Then it creates a script tag and injects it into the DOM.
 
 The host then issues the 'init' call to the widget passing in any initialization values:
 

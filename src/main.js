@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {v4 as uuid} from 'uuid';
 import Widget from './WidgetWrapper';
 import Config from './config';
 
@@ -12,6 +13,10 @@ let widgetComponent = null;
 
 function app(window) {
     console.log(`${widgetName} starting`);
+    // generate uuid for sessionId on app start
+    if (!sessionStorage.getItem('X-Correlation-ID')) {
+        sessionStorage.setItem('X-Correlation-ID', uuid());
+    }
     // If we don't already have a name for widget's global object
     // assigned by the host, then they must be using the simple <script> tag method
     // so we need to get our data out of that tag

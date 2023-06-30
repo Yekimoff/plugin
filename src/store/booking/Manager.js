@@ -16,10 +16,11 @@ export function checkAvailablity(
   index,
   indexesOfFlightsInGroups
 ) {
+    const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
   return fetch(
     `https://avia-new.fstravel.com/api/wl-plugin/external/airCheckAvailability/v3/${id}/${index}/${indexesOfFlightsInGroups.join(',')}`,
     {
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID') },
     }
   )
     .then((response) => response.json())
@@ -56,10 +57,11 @@ export function bookTicket(data) {
 export function getInsurances(
   calculationId
 ) {
-  return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/Insurance/get-calculation?calculationId=${calculationId}`,{
+    const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+    return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/Insurance/get-calculation?calculationId=${calculationId}`,{
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
     },
   })
     .then(x => x.json())
@@ -69,25 +71,31 @@ export function getInsurances(
 
 export const getAddictionalServices = (
   orderId
-) => fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/AdditionalService/additional-services?orderId=${orderId}`,
-  {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  }
-  ).then(x => x.json());
+) => {
+    const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+    return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/AdditionalService/additional-services?orderId=${orderId}`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
+            },
+        }
+    ).then(x => x.json())
+};
 
   export const getBookingUrl = (
     id, index
-  ) => fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/booking/${id}/${index}/0`,
-    {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }
-    ).then(x => x.json());
+  ) => {
+      const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+      return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/booking/${id}/${index}/0`,
+          {
+              method: 'GET',
+              headers: {
+                  'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
+              },
+          }
+      ).then(x => x.json())
+  };
 
 
 
