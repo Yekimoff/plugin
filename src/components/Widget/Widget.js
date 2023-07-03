@@ -25,6 +25,7 @@ export default function Widget(props) {
   const dispatch = useDispatch();
   const location = useSelector((x) => x.router.location);
   const [chosenStaticPage, setChosenStaticPage] = React.useState(null);
+  const [tokenData, setTokenData] = React.useState("")
   const flights = useSelector((x) => x.flights.result);
   React.useEffect(() => {
     dispatch(init(window["fs-flight-search-widget-config"].modules));
@@ -40,9 +41,11 @@ export default function Widget(props) {
   }
 
 
+
   return (
     <div className="fs-widget">
-      <SearchForm setChosenStaticPage={setChosenStaticPage} />
+      <input style={{width:200,height:30}} onChange={(e) => setTokenData(e.target.value)} ></input>
+      <SearchForm setChosenStaticPage={setChosenStaticPage} tokenData={tokenData}/>
       {!chosenStaticPage ? module : chosenStaticPage === "booking" ? <HowToBook /> : chosenStaticPage === "payment" ?  <PaymentInfo /> : chosenStaticPage === "services" ?  <Services /> : chosenStaticPage === "insurance" ?  <InsuranceService /> : chosenStaticPage === "refundExchange" ?  <RefundAndExchange /> : <UserAgreement />}
       {!chosenStaticPage && !flights?.data && <AboutUsBanner />}
 

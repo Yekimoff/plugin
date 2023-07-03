@@ -154,7 +154,7 @@ export const {
 
 export const { initializeFilter, setValues } = searchFilterSlice.actions;
 
-export function loadFlights() {
+export function loadFlights({tokenData}) {
   return async (dispatch, getState, api) => {
     dispatch(flightSearchRequest());
     dispatch(push({ path: "search" }));
@@ -168,6 +168,7 @@ export function loadFlights() {
         secondDate,
       } = getState().flights.searchParams;
       const { filter, ...result } = await api.fetchFlights({
+        tokenData,
         passengers,
         cityFrom,
         cityTo,

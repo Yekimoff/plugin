@@ -76,7 +76,7 @@ export default function SearchForm(props) {
         className="fs-search-form"
         onSubmit={(e) => {
           e.preventDefault();
-          dispatch(loadFlights());
+          dispatch(loadFlights({tokenData: props.tokenData}));
           setFocus(null);
           props.setChosenStaticPage(null);
         }}

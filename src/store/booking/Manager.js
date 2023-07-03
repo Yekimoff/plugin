@@ -57,7 +57,7 @@ export function bookTicket(data) {
 export function getInsurances(
   calculationId
 ) {
-    const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
+    const account = window['fs-flight-search-widget-config'] ? window['-config'].account : null;
     return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/Insurance/get-calculation?calculationId=${calculationId}`,{
     method: 'GET',
     headers: {

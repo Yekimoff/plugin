@@ -12,7 +12,6 @@ export default function fetchFlights(args) {
         args.firstDate
     );
 
-    console.log(window['fs-flight-search-widget-config'].account);
 
     const secondDate = args.secondDate ? new Date(args.secondDate) : null;
     const url = 'https://avia-new.fstravel.com/api/wl-plugin/external/flightSearch/'
@@ -22,7 +21,7 @@ export default function fetchFlights(args) {
     return secondDate ? (fetch(
             `${url}${fromTo}/${format(firstDate, 'yyyy-MM-dd')}/${toFrom}/${secondDate ? format(secondDate, 'yyyy-MM-dd') : "nextDate=false"}/${passengers}/${args.flightClass}/false/z`, {
                 headers: {
-                    'X-Account': account,
+                    'X-Account': args.tokenData !== "" ? args.tokenData : account,
                     'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
                 }
             }
@@ -33,7 +32,7 @@ export default function fetchFlights(args) {
         (fetch(
             `${url}${fromTo}/${format(firstDate, 'yyyy-MM-dd')}/${passengers}/${args.flightClass}/false/z`, {
                 headers: {
-                    'X-Account': account,
+                    'X-Account': args.tokenData !== "" ? args.tokenData : account,
                     'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
                 }
             }

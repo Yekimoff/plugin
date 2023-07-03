@@ -5,11 +5,11 @@ import SearchForm from './SearchForm';
 
 
 
-export default function SearchFormWrapper({setChosenStaticPage}) {
+export default function SearchFormWrapper({setChosenStaticPage, tokenData}) {
   return (
     <FocusFormProvider>
 
-      <SearchForm setChosenStaticPage={setChosenStaticPage}/>
+      <SearchForm setChosenStaticPage={setChosenStaticPage} tokenData={tokenData}/>
     </FocusFormProvider>
   );
 }
