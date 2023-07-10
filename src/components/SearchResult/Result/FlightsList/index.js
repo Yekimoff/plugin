@@ -81,7 +81,7 @@ console.log(props);
                       className="fs-search-flight-item__right-side__head__right__flight-type"
                       style={{
                         background:
-                          x.flight_Type === "Regular" ? "#E3EAFF" : "#FFF3CD",
+                          x.flight_Type === "Charter" ? "#FFF3CD" : "#E3EAFF" ,
                       }}
                     >
                       <img src={planeSrc} />

@@ -6,7 +6,6 @@ import Error from "../Error"
 
 export default function SearchResult() {
   const {loadingStatus,error,data} = useSelector(x => x.flights.result);
-console.log(data, "data")
   return (
     <div>
       {
