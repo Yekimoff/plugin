@@ -18,7 +18,7 @@ const getCityListByStr = async (
   console.log(account);
   if (dataCollection[str]) return dataCollection[str];
   const response = await fetch(
-    `https://avia-new.fstravel.com/api/wl-plugin/external/cities/search?value=${str}`,
+    `http://proxy.tte.test.tui.local/api/external/cities/search?value=${str}`,
     {
       signal: abortController ? abortController.signal : undefined,
       headers: headers,

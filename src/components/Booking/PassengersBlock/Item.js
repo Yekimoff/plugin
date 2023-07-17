@@ -35,7 +35,7 @@ export async function getCityList(str) {
       headers = {'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID')}
     }
     const response = await fetch(
-      `https://avia-new.fstravel.com/api/wl-plugin/external/references/countries/search?value=${str}`, {
+      `http://proxy.tte.test.tui.local/api/externalcountries/search?value=${str}`, {
         headers: headers
         }
     );

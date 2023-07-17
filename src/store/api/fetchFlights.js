@@ -14,7 +14,7 @@ export default function fetchFlights(args) {
 
 
     const secondDate = args.secondDate ? new Date(args.secondDate) : null;
-    const url = 'https://avia-new.fstravel.com/api/wl-plugin/external/flightSearch/'
+    const url = 'http://proxy.tte.test.tui.local/api/external/flightSearch/'
     const account = window['fs-flight-search-widget-config'].account
 
 

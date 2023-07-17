@@ -13,8 +13,8 @@ export const searchSlice = createSlice({
       code: "MOW",
     },
     cityTo: {
-      name: "Санкт-Петербург",
-      code: "LED",
+      name: "",
+      code: "",
     },
     firstDate: null,
     secondDate: null,
