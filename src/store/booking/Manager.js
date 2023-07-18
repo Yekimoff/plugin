@@ -18,7 +18,7 @@ export function checkAvailablity(
 ) {
     const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
   return fetch(
-    `http://proxy.tte.test.tui.local/api/external/airCheckAvailability/v3/${id}/${index}/${indexesOfFlightsInGroups.join(',')}`,
+    `https://avia-new.fstravel.com/api/wl-plugin/external/airCheckAvailability/v3/${id}/${index}/${indexesOfFlightsInGroups.join(',')}`,
     {
       headers: { 'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID') },
     }
@@ -58,7 +58,7 @@ export function getInsurances(
   calculationId
 ) {
     const account = window['fs-flight-search-widget-config'] ? window['-config'].account : null;
-    return fetch(`http://proxy.tte.test.tui.local/api/external/Insurance/get-calculation?calculationId=${calculationId}`,{
+    return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/Insurance/get-calculation?calculationId=${calculationId}`,{
     method: 'GET',
     headers: {
       'Content-Type': 'application/json', 'X-Account': account, 'X-Correlation-ID': sessionStorage.getItem('X-Correlation-ID'),
@@ -73,7 +73,7 @@ export const getAddictionalServices = (
   orderId
 ) => {
     const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
-    return fetch(`http://proxy.tte.test.tui.local/api/external/AdditionalService/additional-services?orderId=${orderId}`,
+    return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/AdditionalService/additional-services?orderId=${orderId}`,
         {
             method: 'GET',
             headers: {
@@ -87,7 +87,7 @@ export const getAddictionalServices = (
     id, index
   ) => {
       const account = window['fs-flight-search-widget-config'] ? window['fs-flight-search-widget-config'].account : null;
-      return fetch(`http://proxy.tte.test.tui.local/api/external/booking/${id}/${index}/0`,
+      return fetch(`https://avia-new.fstravel.com/api/wl-plugin/external/booking/${id}/${index}/0`,
           {
               method: 'GET',
               headers: {
